@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
     context: [
       "/GetCalculoDCB",
     ],
-    target: "https://localhost:7114",
+    target: "https://localhost:5089",
     secure: false
   }
 ]

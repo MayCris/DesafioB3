@@ -8,16 +8,15 @@
         private decimal IR12 => (decimal)20 / 100;
         private decimal IR24 => (decimal)17.5 / 100;
         private decimal IR => (decimal)15 / 100;
-        private decimal ValorAplicado { get; set; }
+        private decimal ValorAplicacao { get; set; }
         private int Meses { get; set; }
 
         public decimal ValorBruto { get; set; }
         public decimal ValorLiquido { get; set; }
 
-        public void CalcularValores(decimal valorAplicado, int meses)
+        public void CalcularValores(decimal valorAplicacao, int meses)
         {
-            //VF = VI x [1 + (CDI x TB)]
-            this.ValorAplicado = valorAplicado;
+            this.ValorAplicacao = valorAplicacao;
             this.Meses = meses;
 
             CalcularValorBruto();
@@ -26,13 +25,15 @@
 
         private void CalcularValorBruto()
         {
-            ValorBruto = ValorAplicado;
+            decimal valorBruto = ValorAplicacao;
             decimal taxa = TaxaCDI * TaxaBase;
             
             for (int i = 0; i < Meses; i++)
             {
-                ValorBruto = ValorBruto * (1 + taxa);
+                valorBruto = valorBruto * (1 + taxa);
             }
+
+            this.ValorBruto = Math.Round(valorBruto, 2);
         }
 
         private void CalcularValorLiquido()
@@ -40,16 +41,16 @@
             switch (Meses)
             {
                 case <= 6:
-                    ValorLiquido = ValorBruto - (ValorBruto * IR6);
+                    ValorLiquido = Math.Round((ValorBruto - (ValorBruto * IR6)),2);
                     break;
                 case <= 12:
-                    ValorLiquido = ValorBruto - (ValorBruto * IR12);
+                    ValorLiquido = Math.Round((ValorBruto - (ValorBruto * IR12)), 2);
                     break;
                 case <= 24:
-                    ValorLiquido = ValorBruto - (ValorBruto * IR24);
+                    ValorLiquido = Math.Round((ValorBruto - (ValorBruto * IR24)), 2);
                     break;
                 default:
-                    ValorLiquido = ValorBruto - (ValorBruto * IR);
+                    ValorLiquido = Math.Round((ValorBruto - (ValorBruto * IR)), 2);
                     break;
             }
         }

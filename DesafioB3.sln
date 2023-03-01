@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioAPI", "DesafioAPI\DesafioAPI.csproj", "{37EA19B7-BEFE-40BA-8CE2-D986C4824F7E}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "DesafioAngular", "DesafioAngular\DesafioAngular\DesafioAngular.esproj", "{3418DB69-4CEC-4037-B67C-CBB0F253C0CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{37EA19B7-BEFE-40BA-8CE2-D986C4824F7E} = {37EA19B7-BEFE-40BA-8CE2-D986C4824F7E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

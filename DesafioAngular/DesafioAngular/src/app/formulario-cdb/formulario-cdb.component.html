@@ -4,21 +4,23 @@
 
   <label>
     Valor Aplicação:
-    <input type="text" name="valorAplicacao" class="campo-valorApliccao" />
+    <input type="text" name="valorAplicacao" id="valorAplicacao" placeholder="valorAplicacao" [(ngModel)]="valorAplicacao" class="campo-valorApliccao" />
   </label>
   <br />
   <br />
   <label>
     Meses aplicação:
-    <input type="text" name="meses" class="campo-meses" />
+    <input type="text" name="meses" class="campo-meses" id="meses" placeholder="meses" [(ngModel)]="meses" />
   </label>
   <br />
   <br />
 
-  <input type="button" value="Calcular" />
+  <button type="button" (click)="calcularCdb()">Calcular</button>
   <br />
   <br />
   <br />
 
-
+  <label> Valor Bruto: R$ {{vlrBruto | currency}}</label>
+  <br />
+  <label> Valor Líquido: R$ {{vlrLiquido | currency}}</label>  
 </form>

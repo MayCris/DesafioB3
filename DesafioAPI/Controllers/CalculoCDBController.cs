@@ -3,22 +3,15 @@
 namespace DesafioAPI.Controllers
 {
     [ApiController]
-    [Route("[calculocdb]")]
+    [Route("api/[controller]")]
 
     public class CalculoCDBController : ControllerBase
     {
-        private readonly ILogger<CalculoCDBController> _logger;
-
-        public CalculoCDBController(ILogger<CalculoCDBController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet(Name = "GetCalculoCDB")]
-        public CdbRetorno Get(decimal valorAplicado, int meses)
+        [HttpGet]
+        public CdbRetorno GetCalculoCDB(decimal valorAplicacao, int meses)
         {
             CdbRetorno retorno = new CdbRetorno();
-            retorno.CalcularValores(valorAplicado, meses);
+            retorno.CalcularValores(valorAplicacao, meses);
 
             return retorno;
         }

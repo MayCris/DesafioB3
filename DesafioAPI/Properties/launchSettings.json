@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "DesafioAPI": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -8,16 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5202"
-    },
-    "https": {
-      "commandName": "Project",
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7114;http://localhost:5202"
+      "applicationUrl": "http://localhost:5089"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -33,8 +24,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:29555",
-      "sslPort": 44360
+      "applicationUrl": "http://localhost:32740",
+      "sslPort": 0
     }
   }
 }
